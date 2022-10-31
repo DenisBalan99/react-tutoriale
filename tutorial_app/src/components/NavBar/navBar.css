@@ -1,0 +1,27 @@
+.navBar {
+    position: fixed;
+    height: 50px;
+    width: 100vw;
+    top: 0px;
+    background-color: black;
+    margin: 10px;
+}
+
+.navBar .MuiButtonBase-root {
+    background-color: black;
+    width: 25%;
+    height: 100%;
+    color: white;
+    display: inline-block;
+    border-bottom: 5px solid black;
+}
+
+.navBar .MuiButton-root:hover {
+    border-bottom: 1px;
+    border-color: white;
+}
+
+.navBar .MuiButton-root:hover {
+    background-color: inherit;
+    border-bottom: 5px solid white;
+}
