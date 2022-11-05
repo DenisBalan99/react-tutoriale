@@ -72,7 +72,7 @@
 
 @media(max-width: 480px) {
     .content {
-        width: 100px;
+        width: 100vh;
     }
 
     .panel:nth-of-type(4).panel:nth-of-type(5){
