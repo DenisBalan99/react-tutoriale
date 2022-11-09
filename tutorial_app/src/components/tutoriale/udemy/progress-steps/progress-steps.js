@@ -1,4 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import BackButton from "../../components/backButton/backBtn";
 import "./progress-steps.css";
 
 export default function ProgressSteps() {
@@ -7,8 +10,11 @@ export default function ProgressSteps() {
   let prevButton = null;
   let nextButton = null;
   const [currentActive, setCurrentActive] = useState(1);
+  let navigate = useNavigate();
 
-  const [progressWidth, setProgressWidth] = useState(5);
+  function navigateTo(path) {
+    navigate(path);
+  }
 
   useEffect(() => {
     circles = document.querySelectorAll(".circle");
@@ -66,8 +72,9 @@ export default function ProgressSteps() {
   }
 
   return (
-    <div className="mainBody">
-      <div className="mainDiv">
+    <div className="stepsBody">
+      <BackButton />
+      <div className="mainDivv">
         <div className="progress-container">
           <div className="progress" id="progress"></div>
           <div className="circle active">1</div>
@@ -76,14 +83,17 @@ export default function ProgressSteps() {
           <div className="circle">4</div>
         </div>
         <button
-          className="btn"
+          className="operationBtn"
           id="prev"
-          //   disabled={true}
           onClick={() => handlePrevEvent()}
         >
           Prev
         </button>
-        <button className="btn" id="next" onClick={() => handleNextEvent()}>
+        <button
+          className="operationBtn"
+          id="next"
+          onClick={() => handleNextEvent()}
+        >
           Next
         </button>
       </div>

@@ -1,17 +1,28 @@
 import React, { Component, useEffect, useState } from "react";
 import "./expandingCards.css";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { Box } from "@mui/system";
+import BackButton from "../../components/backButton/backBtn";
 // import { useHistory } from "react-router-dom";
 
 export default function ExpandingCards() {
-  const panels = document.querySelectorAll(".panel");
+  let panels = [];
   const [panelNo, setPanelNo] = useState(0);
+  let navigate = useNavigate();
+
+  function navigateTo(path) {
+    navigate(path);
+  }
   //   const history = useHistory();
 
-  panels.forEach((panel) => {
-    panel.addEventListener("click", () => {
-      removeActiveClasses();
-      panel.classList.add("active");
+  useEffect(() => {
+    panels = document.querySelectorAll(".panel");
+    panels.forEach((panel) => {
+      panel.addEventListener("click", () => {
+        removeActiveClasses();
+        panel.classList.add("active");
+      });
     });
   });
 
@@ -42,7 +53,7 @@ export default function ExpandingCards() {
   return (
     <div className="body" style={{ backgroundColor: "white" }}>
       {/* <Button className="backButton" onClick={() => history.goBack()}> */}
-      <Button className="backButton">Back</Button>
+      {/* <BackButton /> */}
       <div className="content">
         <div
           className="panel"

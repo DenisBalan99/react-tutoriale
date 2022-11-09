@@ -1,0 +1,29 @@
+.backButton {
+    margin: 0 !important;
+    padding: 0 !important;
+    bottom: 20px;
+    text-align: center;
+    /* translate: translateY(40); */
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: rgb(37, 187, 207);
+    /* border: none !important; */
+    box-shadow: 0 0 5px 1px rgb(73, 73, 73);
+    margin-bottom: 20px !important;
+    cursor: pointer;
+    border-bottom: 10px;
+}
+
+.backButton:hover {
+    background-color: rgb(187, 2, 2);
+}
+
+.boxButton {
+    width: 100vw;
+    position: absolute;
+    bottom: 0px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}

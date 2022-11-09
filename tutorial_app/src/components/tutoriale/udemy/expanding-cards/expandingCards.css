@@ -8,21 +8,6 @@
     
 } */
 
-.backButton {
-    position: absolute;
-    top: 20px;
-    width: 70px;
-    height: 30px;
-    color: white;
-    background-color: red;
-    border: none;
-    cursor: pointer;
-}
-
-.backButton:hover{
-    background-color: rgb(187, 2, 2);
-}
-
 .body {
     font-family: 'Muli', sans-serif;
     display: flex;
@@ -31,6 +16,7 @@
     height: 100vh;
     overflow: hidden;
     margin: 0;
+    background-color: #485174 !important;
 }
 
 .content {
@@ -70,12 +56,12 @@
     transition: opacity 0.3s ease-in 0.4s;
 }
 
-@media(max-width: 480px) {
+@media only screen and (max-width: 480px) {
     .content {
         width: 100vh;
     }
 
-    .panel:nth-of-type(4).panel:nth-of-type(5){
+    .panel:nth-of-type(4),.panel:nth-of-type(5){
         display: none;
     }
 }

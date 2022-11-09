@@ -3,9 +3,9 @@
     --line-border-empty: #e0e0e0;
 }
 
-.mainBody {
+.stepsBody {
     /* width: 100vw !important; */
-    background-color: #F6F7FB !important;
+    background-color: #485174 !important;
     /* justify-content: center; */
     /* text-align: center; */
     height: 100vh !important;
@@ -18,7 +18,7 @@
     margin: 0;
 }
 
-.mainDiv {
+.mainDivv {
     text-align: center;
 }
 
@@ -83,7 +83,7 @@
     transition: 0.4s ease;
 }
 
-.btn {
+.operationBtn {
     background-color: var(--line-border-fill);
     color: white;
     border: 0;
@@ -95,15 +95,15 @@
     margin-left: 10px;  
 }
 
-.btn:active {
+.operationBtn:active {
     transform: scale(0.98);
 }
 
-.btn:focus {
+.operationBtn:focus {
     outline: 0;
 }
 
-.btn:disabled {
+.operationBtn:disabled {
     background-color: var(--line-border-empty);
     cursor: not-allowed
 }
