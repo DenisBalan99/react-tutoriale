@@ -5,7 +5,7 @@
 
 .stepsBody {
     /* width: 100vw !important; */
-    background-color: #485174 !important;
+    background-color: #727272;
     /* justify-content: center; */
     /* text-align: center; */
     height: 100vh !important;
@@ -93,6 +93,7 @@
     padding: 8px 30px;
     font-size: 14px;
     margin-left: 10px;  
+    box-shadow: 0 0 8px -1px black;
 }
 
 .operationBtn:active {

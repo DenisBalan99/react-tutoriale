@@ -1,33 +1,52 @@
 import { Button } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { PureComponent } from "react";
+import React, { PureComponent, useEffect, useState } from "react";
 import "./navBar.css";
 
 export default function NavBar(props) {
-  const { menuItems, logo } = props;
+  const { menuItems, logo, setCurrentRoute } = props;
+  const [buttonPressedChange, setButtonPressedChange] = useState(false);
+  let buttons_bar = null;
 
   const mockMenuItems = [
-    { label: "label1", url: "/label1" },
-    { label: "label2", url: "/label2" },
-    { label: "label3", url: "/label3" },
-    { label: "label4", url: "/label4" },
+    { label: "About", url: "about" },
+    { label: "Contact", url: "contact" },
+    { label: "Projects", url: "projects" },
   ];
 
-  function DisplayMenuItems(props) {
-    const { menuItems } = props;
-
-    return (
-      <React.Fragment>
-        {menuItems.map((item, index) => (
-          <Button key={index}>{item.label}</Button>
-        ))}
-      </React.Fragment>
-    );
+  function setButtonActive(index) {
+    unsetButtonActive();
+    buttons_bar[index].classList.add("active");
+    setButtonPressedChange(!buttonPressedChange);
   }
 
+  function unsetButtonActive() {
+    buttons_bar.forEach((button_bar) => {
+      button_bar.classList.remove("active");
+    });
+  }
+
+  useEffect(() => {
+    buttons_bar = document.querySelectorAll(".button-hover-bar");
+  });
+
   return (
-    <div className="navBar">
-      <DisplayMenuItems menuItems={mockMenuItems} />
+    <div className="nav-bar-main-div">
+      <div className="navBar">
+        {mockMenuItems.map((item, index) => (
+          <React.Fragment key={index}>
+            <Button
+              onClick={() => {
+                setCurrentRoute(item.url);
+                setButtonActive(index);
+              }}
+            >
+              {item.label}
+              <div className="button-hover-bar"></div>
+            </Button>
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 }

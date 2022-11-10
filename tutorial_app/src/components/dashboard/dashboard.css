@@ -1,50 +1,5 @@
-.dashboardDiv {
-    display: inline-block !important;
-    align-items: center;
-    position: relative;
-    margin-top: 20px;
-    justify-content: right;
-    margin: 0;
-    width: 70vw;
-    text-align: center;
-    /* max-width: 400px; */
-}
-
-.dashboardBody {
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    height: 100vh;
+.dashboard-main-div {
     width: 100vw;
-    top: 10px;
-    background-color: rgb(223, 202, 171) !important;
-}
-
-.boxClass {
-    display: inline-block;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: grey !important;
-    width: 200px;
-    height: 200px;
-    margin: 20px;
-    cursor: pointer;
-    transition: 0.5s ease;
-}
-
-.boxClass:hover {
-    scale: 1.1;
-}
-
-.boxContent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: end;
-}
-
-#mainDiv>button:nth-child(5n+1) {
-    clear: left;
+    height: 100vh;
+    overflow: hidden;
 }

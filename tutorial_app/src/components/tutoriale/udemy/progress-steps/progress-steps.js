@@ -73,7 +73,7 @@ export default function ProgressSteps() {
 
   return (
     <div className="stepsBody">
-      <BackButton />
+      {/* <BackButton /> */}
       <div className="mainDivv">
         <div className="progress-container">
           <div className="progress" id="progress"></div>

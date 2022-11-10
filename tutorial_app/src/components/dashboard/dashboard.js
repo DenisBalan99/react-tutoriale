@@ -1,47 +1,28 @@
-import { Box } from "@mui/system";
-import React, { Component } from "react";
-import { Button } from "react-bootstrap";
-import { Navigate, Route, useNavigate } from "react-router-dom";
-import Tutorial1 from "../tutoriale/tutorial1/tutorial1";
-import ExpandingCards from "../tutoriale/udemy/expanding-cards/expandingCards";
-import ProgressSteps from "../tutoriale/udemy/progress-steps/progress-steps";
+import React, { Component, useEffect, useState } from "react";
+import About from "../about/about";
+import Contact from "../contact/contact";
+import NavBar from "../NavBar/navBar";
+import Projects from "../projects/projects";
 import "./dashboard.css";
 
 export default function Dashboard() {
-  let navigate = useNavigate();
+  const [currentRoute, setCurrentRoute] = useState("projects");
 
-  function navigateTo(path) {
-    navigate(path);
-  }
-
-  const navigateRoutes = [
-    {
-      path: "/expanding-cards",
-      content: "Expanding cards",
-    },
-    {
-      path: "/progress-steps",
-      content: "Progress steps",
-    },
-    {
-      path: "/rotating-navigation",
-      content: "Rotating navigation",
-    },
-  ];
+  const displayRoute = () => {
+    switch (currentRoute) {
+      case "projects":
+        return <Projects />;
+      case "contact":
+        return <Contact />;
+      case "about":
+        return <About />;
+    }
+  };
 
   return (
-    <div className="dashboardBody">
-      <div className="dashboardDiv">
-        {navigateRoutes.map((route, index) => (
-          <Button
-            key={index}
-            className="boxClass"
-            onClick={() => navigateTo(route.path)}
-          >
-            <div className="boxContent">{route.content}</div>
-          </Button>
-        ))}
-      </div>
+    <div className="dashboard-main-div">
+      <NavBar setCurrentRoute={setCurrentRoute} />
+      {displayRoute()}
     </div>
   );
 }

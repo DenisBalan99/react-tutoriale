@@ -1,0 +1,75 @@
+.projectsDiv {
+    display: inline-block !important;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+    justify-content: right;
+    margin: 0;
+    width: 70vw;
+    text-align: center;
+    /* max-width: 400px; */
+}
+
+body {
+    margin: 0 !important;
+}
+
+.projectsBody {
+    display: flex;
+    /* align-items: center; */
+    overflow: hidden;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    top: 10px;
+    background-color: rgb(161, 161, 161) !important;
+}
+
+.boxClass {
+    display: inline-block;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: grey !important;
+    width: 200px;
+    height: 50px;
+    margin: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    border: 0;
+    box-shadow: 0 0 8px -1px black;
+}
+
+.boxClass:hover {
+    scale: 1.1;
+}
+
+.boxContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: end;
+}
+
+#mainDiv>button:nth-child(5n+1) {
+    clear: left;
+}
+
+@media only screen and (max-width: 480px) {
+    .projectsBody {
+        overflow: scroll;
+    }
+
+    .boxClass {
+        width: 140px;
+        height: 50px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .projectsDiv {
+        width: 100vw;
+    }
+}

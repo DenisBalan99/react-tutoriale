@@ -54,6 +54,7 @@ export default function ExpandingCards() {
     <div className="body" style={{ backgroundColor: "white" }}>
       {/* <Button className="backButton" onClick={() => history.goBack()}> */}
       {/* <BackButton /> */}
+      <h2 style={{ position: "absolute", top: "10px" }}>Press on the images</h2>
       <div className="content">
         <div
           className="panel"
