@@ -1,21 +1,24 @@
 import { Button } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { PureComponent, useEffect, useState } from "react";
+import { Route, useNavigate } from "react-router-dom";
 import "./navBar.css";
 
 export default function NavBar(props) {
-  const { menuItems, logo, setCurrentRoute } = props;
+  const navigate = useNavigate();
   const [buttonPressedChange, setButtonPressedChange] = useState(false);
+  const [currentActiveButton, setCurrentActiveButton] = useState(2);
   let buttons_bar = null;
 
   const mockMenuItems = [
-    { label: "About", url: "about" },
-    { label: "Contact", url: "contact" },
-    { label: "Projects", url: "projects" },
+    { label: "About", url: "/about" },
+    { label: "Contact", url: "/contact" },
+    { label: "Projects", url: "/projects" },
   ];
 
   function setButtonActive(index) {
     unsetButtonActive();
+    setCurrentActiveButton(index);
     buttons_bar[index].classList.add("active");
     setButtonPressedChange(!buttonPressedChange);
   }
@@ -37,7 +40,7 @@ export default function NavBar(props) {
           <React.Fragment key={index}>
             <Button
               onClick={() => {
-                setCurrentRoute(item.url);
+                navigate(item.url);
                 setButtonActive(index);
               }}
             >

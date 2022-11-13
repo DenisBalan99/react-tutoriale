@@ -1,0 +1,29 @@
+.blurry-main-div {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.bg {
+    background-image: url('https://images.unsplash.com/photo-1576161787924-01bb08dad4a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2104&q=80');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: calc(100vh + 60px);
+    filter: blur(0px);
+    overflow: hidden;
+    z-index: -1;
+    /* margin: 0; */
+}
+
+.loading-text {
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    overflow: hidden;
+}
